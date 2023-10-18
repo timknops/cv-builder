@@ -1,18 +1,25 @@
 import { InputGroup } from "../InputGroup.jsx";
 
-function PersonalDetails({ fullName, email, phoneNumber, address }) {
+function PersonalDetails({
+  fullName,
+  email,
+  phoneNumber,
+  address,
+  onNameChange,
+}) {
   return (
     <div className="bg-white rounded-lg p-6 h-fit shadow-sm w-full">
-      <h2 className="text-2xl font-extrabold text-red-900 mb-6">
+      <h2 className="text-3xl font-extrabold text-red-900 mb-6">
         Personal Details
       </h2>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <InputGroup
           labelId="full-name"
           labelText="Full Name"
           type="text"
           placeholder="Enter your full name"
           value={fullName}
+          onChange={onNameChange}
         />
         <InputGroup
           labelId="email"
