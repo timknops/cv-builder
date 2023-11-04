@@ -2,7 +2,7 @@ import Resume from "./components/Resume.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import { useState } from "react";
 
-function App() {
+const App = () => {
   const [personalDetails, setPersonalDetails] = useState({
     fullName: "",
     email: "",
@@ -24,6 +24,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

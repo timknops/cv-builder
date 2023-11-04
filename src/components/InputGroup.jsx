@@ -1,11 +1,11 @@
-export function InputGroup({
+const InputGroup = ({
   labelId,
   labelText,
   type,
   placeholder,
   value,
   onChange,
-}) {
+}) => {
   return (
     <div className="flex flex-col">
       <label
@@ -19,9 +19,11 @@ export function InputGroup({
         type={type}
         placeholder={placeholder}
         value={value}
+        id={labelId}
         onChange={onChange}
-        data-key={labelId}
       />
     </div>
   );
-}
+};
+
+export default InputGroup;
