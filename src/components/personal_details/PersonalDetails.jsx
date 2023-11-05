@@ -1,15 +1,19 @@
-import InputGroup from "../InputGroup.jsx";
+import InputGroup from "../utils/InputGroup.jsx";
+import Card from "../utils/Card.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Renders a form for the user to input their personal details.
  * @param {Object} personalDetails - The user's personal details.
  * @param {Function} onUserInput - The function to handle user input.
+ * @param {Function} expandCard - The function to expand the card.
  * @returns {JSX.Element} - The component JSX.
  */
-const PersonalDetails = ({ personalDetails, onUserInput }) => {
+const PersonalDetails = ({ personalDetails, onUserInput, expandCard }) => {
   // An object containing the personal details input fields that are required in the InputGroup component.
   const personalDetailsObj = {
-    fullname: {
+    fullName: {
       labelId: "fullName",
       labelText: "Full Name",
       type: "text",
@@ -40,18 +44,29 @@ const PersonalDetails = ({ personalDetails, onUserInput }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-6 h-fit shadow-sm w-full">
-      <h2 className="text-3xl font-extrabold text-red-900 mb-6">
-        Personal Details
-      </h2>
-      {Object.keys(personalDetailsObj).map((key) => (
-        <InputGroup
-          key={key}
-          {...personalDetailsObj[key]}
-          onChange={onUserInput}
+    <Card>
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-3xl font-extrabold text-red-900">
+          Personal Details
+        </h2>
+        <FontAwesomeIcon
+          icon={faChevronUp}
+          className="cursor-pointer"
+          onClick={expandCard}
+          id="personalDetails"
         />
-      ))}
-    </div>
+      </div>
+
+      <div className="gap-4 flex-col flex">
+        {Object.keys(personalDetailsObj).map((key) => (
+          <InputGroup
+            key={key}
+            {...personalDetailsObj[key]}
+            onChange={onUserInput}
+          />
+        ))}
+      </div>
+    </Card>
   );
 };
 
