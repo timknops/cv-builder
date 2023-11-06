@@ -20,9 +20,9 @@ const Sidebar = ({ personalDetails, setPersonalDetails }) => {
     console.log(personalDetails);
   };
 
-  const handleCardExpansion = (e) => {
-    const { id } = e.target;
+  console.log(collapsed);
 
+  const handleCardExpansion = (e, id) => {
     setCollapsed((prevCollapsed) => ({
       ...prevCollapsed,
       [id]: !prevCollapsed[id],
@@ -34,14 +34,13 @@ const Sidebar = ({ personalDetails, setPersonalDetails }) => {
       {collapsed.personalDetails ? (
         <CollapsedInputCard
           title="Personal Details"
-          expandCard={handleCardExpansion}
-          iconId="personalDetails"
+          expandCard={(e) => handleCardExpansion(e, "personalDetails")}
         />
       ) : (
         <PersonalDetails
           personalDetails={personalDetails}
           onUserInput={handlePersonalDetailsChange}
-          expandCard={handleCardExpansion}
+          collapseCard={(e) => handleCardExpansion(e, "personalDetails")}
         />
       )}
     </div>

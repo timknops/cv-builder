@@ -1,7 +1,6 @@
 import InputGroup from "../utils/InputGroup.jsx";
 import Card from "../utils/Card.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Renders a form for the user to input their personal details.
@@ -10,7 +9,7 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
  * @param {Function} expandCard - The function to expand the card.
  * @returns {JSX.Element} - The component JSX.
  */
-const PersonalDetails = ({ personalDetails, onUserInput, expandCard }) => {
+const PersonalDetails = ({ personalDetails, onUserInput, collapseCard }) => {
   // An object containing the personal details input fields that are required in the InputGroup component.
   const personalDetailsObj = {
     fullName: {
@@ -50,10 +49,9 @@ const PersonalDetails = ({ personalDetails, onUserInput, expandCard }) => {
           Personal Details
         </h2>
         <FontAwesomeIcon
-          icon={faChevronUp}
-          className="cursor-pointer"
-          onClick={expandCard}
-          id="personalDetails"
+          icon="chevron-up"
+          className="cursor-pointer p-1"
+          onClick={collapseCard}
         />
       </div>
 
