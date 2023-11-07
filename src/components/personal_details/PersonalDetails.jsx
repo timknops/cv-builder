@@ -1,5 +1,5 @@
-import InputGroup from "../utils/InputGroup.jsx";
-import Card from "../utils/Card.jsx";
+import InputGroup from "../utils/user_input/InputGroup.jsx";
+import Card from "../utils/card/Card.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
@@ -59,7 +59,7 @@ const PersonalDetails = ({ personalDetails, onUserInput, collapseCard }) => {
         {Object.keys(personalDetailsObj).map((key) => (
           <InputGroup
             key={key}
-            {...personalDetailsObj[key]}
+            {...personalDetailsObj[key]} // Spread operator to pass the object's properties as props.
             onChange={onUserInput}
           />
         ))}

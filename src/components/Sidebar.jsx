@@ -1,10 +1,10 @@
 import PersonalDetails from "./personal_details/PersonalDetails.jsx";
 import { useState } from "react";
-import CollapsedInputCard from "./utils/CollapsedInputCard.jsx";
+import CollapsedInputCard from "./utils/card/CollapsedInputCard.jsx";
 
 const Sidebar = ({ personalDetails, setPersonalDetails }) => {
   const [collapsed, setCollapsed] = useState({
-    personalDetails: true,
+    personalDetails: false,
     education: false,
     experience: false,
   });
@@ -16,11 +16,7 @@ const Sidebar = ({ personalDetails, setPersonalDetails }) => {
       ...prevPersonalDetails,
       [id]: value,
     }));
-
-    console.log(personalDetails);
   };
-
-  console.log(collapsed);
 
   const handleCardExpansion = (e, id) => {
     setCollapsed((prevCollapsed) => ({
@@ -30,7 +26,7 @@ const Sidebar = ({ personalDetails, setPersonalDetails }) => {
   };
 
   return (
-    <div className="flex justify-self-end justify-end w-1/2 p-4">
+    <div className="flex justify-self-end justify-end w-450 py-6">
       {collapsed.personalDetails ? (
         <CollapsedInputCard
           title="Personal Details"
