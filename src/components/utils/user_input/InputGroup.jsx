@@ -1,13 +1,13 @@
 /**
  * InputGroup component.
- * @param {Object} props - The props object.
- * @param {string} labelId - The id of the label element.
- * @param {string} labelText - The text of the label element.
- * @param {string} type - The type of the input element.
- * @param {string} placeholder - The placeholder of the input element.
- * @param {string} value - The value of the input element.
- * @param {Function} onChange - The function to handle the input change.
- * @returns {JSX.Element} - The component JSX.
+ *
+ * @param {string} labelId The label id.
+ * @param {string} abelText The label text.
+ * @param {string} type The input type.
+ * @param {string} placeholder The input placeholder.
+ * @param {string} value The input value.
+ * @param {Function} onChange The function to handle input change.
+ * @returns {JSX.Element} The component JSX.
  */
 const InputGroup = ({
   labelId,

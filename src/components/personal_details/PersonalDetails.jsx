@@ -1,6 +1,6 @@
 import InputGroup from "../utils/user_input/InputGroup.jsx";
 import Card from "../utils/card/Card.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CardHeader from "../utils/card/CardHeader.jsx";
 
 /**
  * Renders a form for the user to input their personal details.
@@ -44,18 +44,13 @@ const PersonalDetails = ({ personalDetails, onUserInput, collapseCard }) => {
 
   return (
     <Card>
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-3xl font-extrabold text-red-900">
-          Personal Details
-        </h2>
-        <FontAwesomeIcon
-          icon="chevron-up"
-          className="cursor-pointer p-1"
-          onClick={collapseCard}
-        />
-      </div>
+      <CardHeader
+        title="Personal Details"
+        onIconClick={collapseCard}
+        iconName="chevron-up"
+      />
 
-      <div className="gap-4 flex-col flex">
+      <div className="gap-4 flex-col flex mt-5">
         {Object.keys(personalDetailsObj).map((key) => (
           <InputGroup
             key={key}

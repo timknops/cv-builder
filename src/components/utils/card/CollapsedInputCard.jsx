@@ -1,18 +1,20 @@
 import Card from "./Card.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CardHeader from "./CardHeader.jsx";
 
+/**
+ * A card component that displays a collapsed input field.
+ * @param {string} title The title of the card.
+ * @param {Function} expandCard The function to expand the card.
+ * @returns {JSX.Element} The JSX element representing the collapsed input card.
+ */
 const CollapsedInputCard = ({ title, expandCard }) => {
   return (
     <Card>
-      <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-extrabold text-red-900">{title}</h2>
-
-        <FontAwesomeIcon
-          icon="chevron-down"
-          className="cursor-pointer p-1"
-          onClick={expandCard}
-        />
-      </div>
+      <CardHeader
+        title={title}
+        onIconClick={expandCard}
+        iconName="chevron-down"
+      />
     </Card>
   );
 };

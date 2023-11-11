@@ -1,4 +1,4 @@
-import ResumeHeaderInfoText from "./ResumeHeaderInfoText.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ResumeHeader = ({ personalDetails }) => {
   return (
@@ -9,15 +9,18 @@ const ResumeHeader = ({ personalDetails }) => {
         </h1>
 
         <div className="flex gap-4">
-          <ResumeHeaderInfoText text={personalDetails.email} icon="envelope" />
-          <ResumeHeaderInfoText
-            text={personalDetails.phoneNumber}
-            icon="phone"
-          />
-          <ResumeHeaderInfoText
-            text={personalDetails.address}
-            icon="map-marker-alt"
-          />
+          <div className="flex gap-2 items-center text-sm">
+            <FontAwesomeIcon icon="envelope" />
+            <p>{personalDetails.email}</p>
+          </div>
+          <div className="flex gap-2 items-center text-sm">
+            <FontAwesomeIcon icon="phone" />
+            <p>{personalDetails.phoneNumber}</p>
+          </div>
+          <div className="flex gap-2 items-center text-sm">
+            <FontAwesomeIcon icon="map-marker-alt" />
+            <p>{personalDetails.address}</p>
+          </div>
         </div>
       </div>
     </div>
