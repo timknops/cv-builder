@@ -1,7 +1,21 @@
+import { useState } from "react";
 import CardHeader from "../utils/card/CardHeader";
 import Card from "../utils/card/Card";
+import EducationOverview from "./EducationOverview";
+import NewEducation from "./NewEducation";
 
-const Education = ({ collapseCard }) => {
+const Education = ({ collapseCard, education, setEducation }) => {
+  const [overviewActive, setOverviewActive] = useState(true);
+
+  const handleEducationChange = (e) => {
+    const { id, value } = e.target;
+
+    setEducation((prevEducation) => ({
+      ...prevEducation,
+      [id]: value,
+    }));
+  };
+
   return (
     <Card>
       <CardHeader
@@ -10,7 +24,15 @@ const Education = ({ collapseCard }) => {
         iconName="chevron-up"
       />
 
-      {/* TODO: Add education input fields. */}
+      {overviewActive ? (
+        <EducationOverview education={education} />
+      ) : (
+        <NewEducation />
+      )}
+
+      {/* <div className="gap-4 flex flex-col mt-5">
+        <InputGroup />
+      </div> */}
     </Card>
   );
 };

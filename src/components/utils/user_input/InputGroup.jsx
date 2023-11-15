@@ -26,7 +26,7 @@ const InputGroup = ({
         {labelText.toUpperCase()}
       </label>
       <input
-        className="border border-gray-300 focus:border-red-900 rounded-md p-3 text-sm outline-none shadow-sm"
+        className="border border-gray-300 focus:border-red-900 rounded-md px-4 py-2 text-sm outline-none transition-all duration-200 ease-in-out focus:ring-1 focus:ring-red-900"
         type={type}
         placeholder={placeholder}
         value={value}

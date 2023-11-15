@@ -1,12 +1,13 @@
+import { useState } from "react";
 import Resume from "./components/resume/Resume.jsx";
 import Sidebar from "./components/Sidebar.jsx";
-import { useState } from "react";
 import sampleData from "./sample_data.js";
 
 const App = () => {
   const [personalDetails, setPersonalDetails] = useState(
-    sampleData.personalDetails,
+    sampleData.personalDetails
   );
+  const [education, setEducation] = useState(sampleData.education);
 
   return (
     <div className="w-screen grid grid-cols-2 gap-6">
@@ -14,6 +15,8 @@ const App = () => {
       <Sidebar
         personalDetails={personalDetails}
         setPersonalDetails={setPersonalDetails}
+        education={education}
+        setEducation={setEducation}
       />
 
       {/* Right side of the page. */}

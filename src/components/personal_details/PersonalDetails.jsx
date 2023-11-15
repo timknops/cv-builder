@@ -4,10 +4,10 @@ import CardHeader from "../utils/card/CardHeader.jsx";
 
 /**
  * Renders a form for the user to input their personal details.
- * @param {Object} personalDetails - The user's personal details.
- * @param {Function} onUserInput - The function to handle user input.
- * @param {Function} expandCard - The function to expand the card.
- * @returns {JSX.Element} - The component JSX.
+ * @param {Object} personalDetails The user's personal details.
+ * @param {Function} onUserInput The function to handle user input.
+ * @param {Function} expandCard The function to expand the card.
+ * @returns {JSX.Element} The component JSX.
  */
 const PersonalDetails = ({ personalDetails, onUserInput, collapseCard }) => {
   // An object containing the personal details input fields that are required in the InputGroup component.

@@ -10,7 +10,12 @@ import CollapsedInputCard from "./utils/card/CollapsedInputCard.jsx";
  * @param {Function} setPersonalDetails The function to set the user's personal details.
  * @returns {JSX.Element} The component JSX.
  */
-const Sidebar = ({ personalDetails, setPersonalDetails }) => {
+const Sidebar = ({
+  personalDetails,
+  setPersonalDetails,
+  education,
+  setEducation,
+}) => {
   const [collapsed, setCollapsed] = useState({
     personalDetails: false,
     education: true,
@@ -54,7 +59,11 @@ const Sidebar = ({ personalDetails, setPersonalDetails }) => {
           expandCard={() => handleCardExpansion("education")}
         />
       ) : (
-        <Education collapseCard={() => handleCardExpansion("education")} />
+        <Education
+          collapseCard={() => handleCardExpansion("education")}
+          education={education}
+          setEducation={setEducation}
+        />
       )}
     </div>
   );
