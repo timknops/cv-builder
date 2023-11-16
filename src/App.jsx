@@ -20,7 +20,7 @@ const App = () => {
       />
 
       {/* Right side of the page. */}
-      <div className="w-full h-screen p-6">
+      <div className="w-full h-screen py-6">
         <Resume personalDetails={personalDetails} />
       </div>
     </div>
