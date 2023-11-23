@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Popover from "../utils/popover/Popover";
+import DeleteModal from "../utils/modal/DeleteModal";
 
-const EducationOverviewCard = ({ singleDegree }) => {
-  const [open, setOpen] = useState(false);
+const EducationOverviewCard = ({ singleDegree, deleteEducation }) => {
+  const [modalActive, setModalActive] = useState(false);
 
-  const handlePopoverClick = () => {
-    setOpen(!open);
+  const handleModal = () => {
+    setModalActive(!modalActive);
   };
 
   return (
@@ -21,15 +21,15 @@ const EducationOverviewCard = ({ singleDegree }) => {
         <div className="flex flex-col justify-between">
           <div className="flex gap-2 items-end h-full">
             <button
-              data-popover-target="popover-click"
-              data-popover-trigger="click"
               type="button"
-              onClick={handlePopoverClick}
+              data-modal-target="popup-modal"
+              data-modal-toggle="popup-modal"
+              onClick={handleModal}
               className="px-3 py-2 text-xs font-medium bg-red-900 text-white border border-red-900 rounded-md hover:border-red-800 hover:bg-red-800 focus:outline-none transition duration-50"
             >
               Delete
             </button>
-            {open && <Popover />}
+
             <button
               type="button"
               className="px-3 py-2 text-xs font-medium text-gray-800 border border-gray-800 rounded-md hover:bg-gray-700 hover:text-white focus:outline-none transition duration-50"
@@ -39,6 +39,14 @@ const EducationOverviewCard = ({ singleDegree }) => {
           </div>
         </div>
       </div>
+      {modalActive && (
+        <DeleteModal
+          text="Are you sure you want to delete "
+          textHighlight={singleDegree.degree}
+          handleModal={handleModal}
+          continueAction={() => deleteEducation(singleDegree.id)}
+        />
+      )}
     </div>
   );
 };

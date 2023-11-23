@@ -7,13 +7,9 @@ import NewEducation from "./NewEducation";
 const Education = ({ collapseCard, education, setEducation }) => {
   const [overviewActive, setOverviewActive] = useState(true);
 
-  const handleEducationChange = (e) => {
-    const { id, value } = e.target;
-
-    setEducation((prevEducation) => ({
-      ...prevEducation,
-      [id]: value,
-    }));
+  const deleteEducation = (id) => {
+    const newEducation = education.filter((degree) => degree.id !== id);
+    setEducation(newEducation);
   };
 
   return (
@@ -25,14 +21,13 @@ const Education = ({ collapseCard, education, setEducation }) => {
       />
 
       {overviewActive ? (
-        <EducationOverview education={education} />
+        <EducationOverview
+          education={education}
+          deleteEducation={deleteEducation}
+        />
       ) : (
         <NewEducation />
       )}
-
-      {/* <div className="gap-4 flex flex-col mt-5">
-        <InputGroup />
-      </div> */}
     </Card>
   );
 };
