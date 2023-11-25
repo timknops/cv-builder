@@ -12,6 +12,10 @@ const Education = ({ collapseCard, education, setEducation }) => {
     setEducation(newEducation);
   };
 
+  const handleOverviewChange = () => {
+    setOverviewActive(!overviewActive);
+  };
+
   return (
     <Card>
       <CardHeader
@@ -24,6 +28,7 @@ const Education = ({ collapseCard, education, setEducation }) => {
         <EducationOverview
           education={education}
           deleteEducation={deleteEducation}
+          handleOverviewChange={handleOverviewChange}
         />
       ) : (
         <NewEducation />

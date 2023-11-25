@@ -25,14 +25,14 @@ const EducationOverviewCard = ({ singleDegree, deleteEducation }) => {
               data-modal-target="popup-modal"
               data-modal-toggle="popup-modal"
               onClick={handleModal}
-              className="px-3 py-2 text-xs font-medium bg-red-900 text-white border border-red-900 rounded-md hover:border-red-800 hover:bg-red-800 focus:outline-none transition duration-50"
+              className="text-white bg-red-900 hover:bg-red-800 font-medium rounded-lg text-xs inline-flex items-center px-3 py-2 text-center"
             >
               Delete
             </button>
 
             <button
               type="button"
-              className="px-3 py-2 text-xs font-medium text-gray-800 border border-gray-800 rounded-md hover:bg-gray-700 hover:text-white focus:outline-none transition duration-50"
+              className="text-gray-500 bg-white hover:bg-gray-100 rounded-lg border border-gray-200 text-xs font-medium px-3 py-2 hover:text-gray-900"
             >
               Edit
             </button>
