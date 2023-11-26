@@ -20,8 +20,10 @@ const App = () => {
       />
 
       {/* Right side of the page. */}
-      <div className="w-full h-screen py-6">
-        <Resume personalDetails={personalDetails} />
+      <div className="relative">
+        <div className="w-full h-screen py-6 fixed">
+          <Resume personalDetails={personalDetails} />
+        </div>
       </div>
     </div>
   );

@@ -25,14 +25,29 @@ const InputGroup = ({
       >
         {labelText.toUpperCase()}
       </label>
-      <input
-        className="border border-gray-300 focus:border-red-900 rounded-md px-4 py-2 text-sm outline-none transition-all duration-200 ease-in-out focus:ring-1 focus:ring-red-900"
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        id={labelId}
-        onChange={onChange}
-      />
+
+      {type === "text" ? (
+        <input
+          className="border border-gray-300 focus:border-red-900 rounded-md px-4 py-2 text-sm outline-none transition-all duration-200 ease-in-out focus:ring-1 focus:ring-red-900"
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          id={labelId}
+          onChange={onChange}
+        />
+      ) : (
+        <input
+          className="border border-gray-300 focus:border-red-900 rounded-md px-4 py-2 text-sm outline-none transition-all duration-200 ease-in-out focus:ring-1 focus:ring-red-900"
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          id={labelId}
+          onChange={onChange}
+          min="1950"
+          max="2050"
+          step="1"
+        />
+      )}
     </div>
   );
 };

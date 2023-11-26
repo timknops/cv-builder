@@ -4,7 +4,13 @@ import Card from "../utils/card/Card";
 import EducationOverview from "./EducationOverview";
 import NewEducation from "./NewEducation";
 
-const Education = ({ collapseCard, education, setEducation }) => {
+const Education = ({
+  collapseCard,
+  education,
+  setEducation,
+  newEducationData,
+  handleNewEducationChange,
+}) => {
   const [overviewActive, setOverviewActive] = useState(true);
 
   const deleteEducation = (id) => {
@@ -31,7 +37,10 @@ const Education = ({ collapseCard, education, setEducation }) => {
           handleOverviewChange={handleOverviewChange}
         />
       ) : (
-        <NewEducation />
+        <NewEducation
+          newEducationData={newEducationData}
+          handleNewEducationChange={handleNewEducationChange}
+        />
       )}
     </Card>
   );
