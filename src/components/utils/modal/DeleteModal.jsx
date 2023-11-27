@@ -1,6 +1,6 @@
 const DeleteModal = ({ text, textHighlight, handleModal, continueAction }) => {
   return (
-    <div className="fixed top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-gray-900/10">
+    <div className="fixed top-0 z-50 right-0 bottom-0 left-0 flex items-center justify-center bg-gray-900/10">
       <div className="relative p-4 w-full max-w-md max-h-full">
         <div className="relative bg-white rounded-lg shadow">
           <button

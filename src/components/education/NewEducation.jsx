@@ -9,13 +9,41 @@ import InputGroup from "../utils/user_input/InputGroup";
  * @param {Function} handleNewEducationChange - The function to handle changes in the new education data.
  * @returns {JSX.Element} The JSX element representing the form for adding new education details.
  */
-const NewEducation = ({ newEducationData, handleNewEducationChange }) => {
-  const test = () => {
-    console.log("test");
+const NewEducation = ({
+  newEducationData,
+  handleNewEducationChange,
+  setNewEducationData,
+  setOverviewActive,
+  setEducation,
+}) => {
+  const resetNewEducation = () => {
+    setNewEducationData({
+      school: "",
+      degree: "",
+      startDate: "",
+      endDate: "",
+      location: "",
+    });
+  };
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+
+    // If the button clicked is the cancel button, reset the form and change the overview to active.
+    if (e.target.textContent === "Cancel") {
+      resetNewEducation();
+
+      setOverviewActive(true);
+    } else {
+      // If the button clicked is the add button, add the new education to the list of education.
+      setEducation((prevEducation) => [...prevEducation, newEducationData]);
+      resetNewEducation();
+      setOverviewActive(true);
+    }
   };
 
   return (
-    <div className="gap-4 flex-col flex mt-5 w-full">
+    <form className="gap-4 flex-col flex mt-5 w-full">
       <InputGroup
         labelId="school"
         labelText="School"
@@ -62,10 +90,18 @@ const NewEducation = ({ newEducationData, handleNewEducationChange }) => {
       />
 
       <div className="flex justify-end items-center gap-2">
-        <Button type="reset" text="Cancel" />
-        <Button type="submit" text="Add" />
+        <Button
+          type="reset"
+          text="Cancel"
+          handleButtonClick={handleButtonClick}
+        />
+        <Button
+          type="submit"
+          text="Add"
+          handleButtonClick={handleButtonClick}
+        />
       </div>
-    </div>
+    </form>
   );
 };
 

@@ -1,8 +1,9 @@
-const Button = ({ type, text }) => {
+const Button = ({ type, text, handleButtonClick }) => {
   return (
     <>
       {type === "reset" ? (
         <button
+          onClick={handleButtonClick}
           type="reset"
           className="text-sm text-gray-500 bg-white hover:bg-gray-100 rounded-lg border border-gray-200 font-medium px-5 py-2.5 hover:text-gray-900"
         >
@@ -10,6 +11,7 @@ const Button = ({ type, text }) => {
         </button>
       ) : (
         <button
+          onClick={handleButtonClick}
           type="submit"
           className="text-sm text-white bg-red-900 hover:bg-red-800 font-medium rounded-lg inline-flex items-center px-5 py-2.5 text-center"
         >

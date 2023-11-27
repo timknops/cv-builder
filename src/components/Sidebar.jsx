@@ -31,6 +31,7 @@ const Sidebar = ({
     endDate: "",
     location: "",
   });
+  const [overviewActive, setOverviewActive] = useState(true);
 
   const handlePersonalDetailsChange = (e) => {
     const { id, value } = e.target;
@@ -84,6 +85,9 @@ const Sidebar = ({
           setEducation={setEducation}
           newEducationData={newEducationData}
           handleNewEducationChange={handleNewEducationChange}
+          setNewEducationData={setNewEducationData}
+          overviewActive={overviewActive}
+          setOverviewActive={setOverviewActive}
         />
       )}
     </div>

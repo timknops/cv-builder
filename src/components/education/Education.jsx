@@ -1,4 +1,3 @@
-import { useState } from "react";
 import CardHeader from "../utils/card/CardHeader";
 import Card from "../utils/card/Card";
 import EducationOverview from "./EducationOverview";
@@ -10,9 +9,10 @@ const Education = ({
   setEducation,
   newEducationData,
   handleNewEducationChange,
+  setNewEducationData,
+  overviewActive,
+  setOverviewActive,
 }) => {
-  const [overviewActive, setOverviewActive] = useState(true);
-
   const deleteEducation = (id) => {
     const newEducation = education.filter((degree) => degree.id !== id);
     setEducation(newEducation);
@@ -40,6 +40,10 @@ const Education = ({
         <NewEducation
           newEducationData={newEducationData}
           handleNewEducationChange={handleNewEducationChange}
+          setNewEducationData={setNewEducationData}
+          handleOverviewChange={handleOverviewChange}
+          setOverviewActive={setOverviewActive}
+          setEducation={setEducation}
         />
       )}
     </Card>
