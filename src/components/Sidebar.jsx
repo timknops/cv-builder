@@ -27,8 +27,8 @@ const Sidebar = ({
   const [newEducationData, setNewEducationData] = useState({
     school: "",
     degree: "",
-    startDate: "",
-    endDate: "",
+    startYear: "",
+    endYear: "",
     location: "",
   });
   const [overviewActive, setOverviewActive] = useState(true);

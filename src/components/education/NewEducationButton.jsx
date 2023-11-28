@@ -1,3 +1,8 @@
+/**
+ * Renders a button for adding new education.
+ * @param {Function} onNewEducation - The callback function to be called when the button is clicked.
+ * @returns {JSX.Element} The rendered button component.
+ */
 const NewEducationButton = ({ onNewEducation }) => {
   return (
     <div

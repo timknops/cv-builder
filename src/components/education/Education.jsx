@@ -1,7 +1,7 @@
 import CardHeader from "../utils/card/CardHeader";
 import Card from "../utils/card/Card";
 import EducationOverview from "./EducationOverview";
-import NewEducation from "./NewEducation";
+import EducationInputForm from "./EducationInputForm";
 
 const Education = ({
   collapseCard,
@@ -22,6 +22,15 @@ const Education = ({
     setOverviewActive(!overviewActive);
   };
 
+  const handleEditButton = (educationId) => {
+    const educationToEdit = education.find(
+      (singleEducation) => singleEducation.id === educationId
+    );
+
+    setNewEducationData(educationToEdit);
+    handleOverviewChange();
+  };
+
   return (
     <Card>
       <CardHeader
@@ -35,13 +44,14 @@ const Education = ({
           education={education}
           deleteEducation={deleteEducation}
           handleOverviewChange={handleOverviewChange}
+          handleEditButton={handleEditButton}
         />
       ) : (
-        <NewEducation
+        <EducationInputForm
+          education={education}
           newEducationData={newEducationData}
-          handleNewEducationChange={handleNewEducationChange}
           setNewEducationData={setNewEducationData}
-          handleOverviewChange={handleOverviewChange}
+          handleNewEducationChange={handleNewEducationChange}
           setOverviewActive={setOverviewActive}
           setEducation={setEducation}
         />

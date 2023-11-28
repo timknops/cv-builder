@@ -1,5 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+/**
+ * Renders the header section of a resume.
+ *
+ * @param {Object} personalDetails - The personal details displayed in the header.
+ * @param {string} personalDetails.fullName - The full name of the user.
+ * @param {string} personalDetails.email - The email address of the user.
+ * @param {string} personalDetails.phoneNumber - The phone number of the user.
+ * @param {string} personalDetails.address - The address of the user.
+ * @returns {JSX.Element} The rendered header component.
+ */
 const ResumeHeader = ({ personalDetails }) => {
   return (
     <div className="w-full flex items-center justify-center bg-red-900 text-gray-50 p-5 rounded-t-lg">

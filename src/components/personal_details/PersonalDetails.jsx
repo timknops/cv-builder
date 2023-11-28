@@ -4,6 +4,8 @@ import CardHeader from "../utils/card/CardHeader.jsx";
 
 /**
  * Renders a form for the user to input their personal details.
+ *
+ * @component
  * @param {Object} personalDetails The user's personal details.
  * @param {Function} onUserInput The function to handle user input.
  * @param {Function} expandCard The function to expand the card.
@@ -54,7 +56,7 @@ const PersonalDetails = ({ personalDetails, onUserInput, collapseCard }) => {
         {Object.keys(personalDetailsObj).map((key) => (
           <InputGroup
             key={key}
-            {...personalDetailsObj[key]} // Spread operator to pass the object's properties as props.
+            {...personalDetailsObj[key]} // Pass the object's properties as props.
             onChange={onUserInput}
           />
         ))}
