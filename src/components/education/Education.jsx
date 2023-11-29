@@ -23,11 +23,12 @@ const Education = ({
   };
 
   const handleEditButton = (educationId) => {
+    // Find the education object that matches the id of the education to edit.
     const educationToEdit = education.find(
       (singleEducation) => singleEducation.id === educationId
     );
 
-    setNewEducationData(educationToEdit);
+    setNewEducationData(educationToEdit); // Set the education data to edit.
     handleOverviewChange();
   };
 

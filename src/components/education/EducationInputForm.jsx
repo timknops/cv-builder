@@ -99,7 +99,7 @@ const EducationInputForm = ({
         <InputGroup
           labelId="startYear"
           labelText="Start Year"
-          type="number"
+          type="text"
           placeholder="Stating year"
           value={newEducationData.startYear}
           onChange={handleNewEducationChange}
@@ -107,7 +107,7 @@ const EducationInputForm = ({
         <InputGroup
           labelId="endYear"
           labelText="End Year"
-          type="number"
+          type="text"
           placeholder="Ending year"
           value={newEducationData.endYear}
           onChange={handleNewEducationChange}
