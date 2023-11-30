@@ -10,7 +10,7 @@ import InputGroup from "../utils/user_input/InputGroup";
  * @param {Object} newEducationData - Data for new education.
  * @param {Function} handleNewEducationChange - Function to handle new education data change.
  * @param {Function} setNewEducationData - Function to set new education data.
- * @param {Function} setOverviewActive - Function to set overview active state.
+ * @param {Function} setEducationOverviewActive - Function to set overview active state.
  * @param {Function} setEducation - Function to set education data.
  * @returns {JSX.Element} EducationInputForm component.
  */
@@ -19,7 +19,7 @@ const EducationInputForm = ({
   newEducationData,
   handleNewEducationChange,
   setNewEducationData,
-  setOverviewActive,
+  setEducationOverviewActive,
   setEducation,
 }) => {
   const resetNewEducation = () => {
@@ -52,7 +52,7 @@ const EducationInputForm = ({
         setEducation(updatedEducation);
 
         resetNewEducation();
-        setOverviewActive(true);
+        setEducationOverviewActive(true);
         break;
       }
       case "add": {
@@ -65,13 +65,13 @@ const EducationInputForm = ({
           newEducationDataWithId,
         ]);
         resetNewEducation();
-        setOverviewActive(true);
+        setEducationOverviewActive(true);
         break;
       }
 
       default:
         resetNewEducation();
-        setOverviewActive(true);
+        setEducationOverviewActive(true);
         break;
     }
   };

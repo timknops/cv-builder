@@ -8,6 +8,7 @@ const App = () => {
     sampleData.personalDetails
   );
   const [education, setEducation] = useState(sampleData.education);
+  const [experience, setExperience] = useState(sampleData.experience);
 
   return (
     <div className="w-screen grid grid-cols-2 gap-6">
@@ -17,12 +18,18 @@ const App = () => {
         setPersonalDetails={setPersonalDetails}
         education={education}
         setEducation={setEducation}
+        experience={experience}
+        setExperience={setExperience}
       />
 
       {/* Right side of the page. */}
       <div className="relative">
         <div className="w-full h-screen py-6 fixed">
-          <Resume personalDetails={personalDetails} education={education} />
+          <Resume
+            personalDetails={personalDetails}
+            education={education}
+            experience={experience}
+          />
         </div>
       </div>
     </div>

@@ -25,6 +25,27 @@ const sampleData = {
       id: uuidv4(),
     },
   ],
+  experience: [
+    {
+      company: "Google",
+      position: "Software Engineer",
+      startDate: "2019/01",
+      endDate: "2020/10",
+      location: "Abuja",
+      description:
+        "Responsible for developing and maintaining software applications using JavaScript and React. Collaborated with cross-functional teams to deliver high-quality software solutions. Implemented new features and enhancements based on customer requirements.",
+      id: uuidv4(),
+    },
+    {
+      company: "Facebook",
+      position: "Software Engineer",
+      startDate: "2020/11",
+      endDate: "2021/10",
+      location: "Lagos",
+      description: "lorem ipsum",
+      id: uuidv4(),
+    },
+  ],
 };
 
 export default sampleData;

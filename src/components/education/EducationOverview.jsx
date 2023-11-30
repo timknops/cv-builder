@@ -1,5 +1,5 @@
 import EducationOverviewCard from "./EducationOverviewCard";
-import NewEducationButton from "./NewEducationButton";
+import NewButtonCard from "../utils/card/NewButtonCard";
 
 const EducationOverview = ({
   education,
@@ -17,7 +17,7 @@ const EducationOverview = ({
           handleEditButton={handleEditButton}
         />
       ))}
-      <NewEducationButton onNewEducation={handleOverviewChange} />
+      <NewButtonCard onNewButtonClick={handleOverviewChange} />
     </>
   );
 };

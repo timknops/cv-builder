@@ -10,7 +10,7 @@ const ResumeEducation = ({ education }) => {
   return (
     <div className="w-full p-5">
       <h3 className="text-red-900 text-xl font-extrabold">Education</h3>
-      <hr className="h-1 my-1 bg-gray-200 border" />
+      <hr className="h-1 my-1 bg-gray-200 border-0 rounded " />
 
       <div className="flex flex-col gap-2">
         {education.map((singleEducation) => (

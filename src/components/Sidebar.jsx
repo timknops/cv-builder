@@ -2,6 +2,7 @@ import PersonalDetails from "./personal_details/PersonalDetails.jsx";
 import Education from "./education/Education.jsx";
 import { useState } from "react";
 import CollapsedInputCard from "./utils/card/CollapsedInputCard.jsx";
+import Experience from "./experience/Experience.jsx";
 
 /**
  * Sidebar component for displaying personal details and education information.
@@ -18,11 +19,13 @@ const Sidebar = ({
   setPersonalDetails,
   education,
   setEducation,
+  experience,
+  setExperience,
 }) => {
   const [collapsed, setCollapsed] = useState({
     personalDetails: false,
     education: true,
-    experience: false,
+    experience: true,
   });
   const [newEducationData, setNewEducationData] = useState({
     school: "",
@@ -31,7 +34,9 @@ const Sidebar = ({
     endYear: "",
     location: "",
   });
-  const [overviewActive, setOverviewActive] = useState(true);
+  const [educationOverviewActive, setEducationOverviewActive] = useState(true);
+  const [experienceOverviewActive, setExperienceOverviewActive] =
+    useState(true);
 
   const handlePersonalDetailsChange = (e) => {
     const { id, value } = e.target;
@@ -86,8 +91,23 @@ const Sidebar = ({
           newEducationData={newEducationData}
           handleNewEducationChange={handleNewEducationChange}
           setNewEducationData={setNewEducationData}
-          overviewActive={overviewActive}
-          setOverviewActive={setOverviewActive}
+          educationOverviewActive={educationOverviewActive}
+          setEducationOverviewActive={setEducationOverviewActive}
+        />
+      )}
+
+      {collapsed.experience ? (
+        <CollapsedInputCard
+          title="Experience"
+          expandCard={() => handleCardExpansion("experience")}
+        />
+      ) : (
+        <Experience
+          collapseCard={() => handleCardExpansion("experience")}
+          experience={experience}
+          setExperience={setExperience}
+          experienceOverviewActive={experienceOverviewActive}
+          setExperienceOverviewActive={setExperienceOverviewActive}
         />
       )}
     </div>

@@ -10,8 +10,8 @@ const Education = ({
   newEducationData,
   handleNewEducationChange,
   setNewEducationData,
-  overviewActive,
-  setOverviewActive,
+  educationOverviewActive,
+  setEducationOverviewActive,
 }) => {
   const deleteEducation = (id) => {
     const newEducation = education.filter((degree) => degree.id !== id);
@@ -19,7 +19,7 @@ const Education = ({
   };
 
   const handleOverviewChange = () => {
-    setOverviewActive(!overviewActive);
+    setEducationOverviewActive(!educationOverviewActive);
   };
 
   const handleEditButton = (educationId) => {
@@ -40,7 +40,7 @@ const Education = ({
         iconName="chevron-up"
       />
 
-      {overviewActive ? (
+      {educationOverviewActive ? (
         <EducationOverview
           education={education}
           deleteEducation={deleteEducation}
@@ -53,7 +53,7 @@ const Education = ({
           newEducationData={newEducationData}
           setNewEducationData={setNewEducationData}
           handleNewEducationChange={handleNewEducationChange}
-          setOverviewActive={setOverviewActive}
+          setEducationOverviewActive={setEducationOverviewActive}
           setEducation={setEducation}
         />
       )}
