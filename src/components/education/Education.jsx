@@ -1,8 +1,21 @@
 import CardHeader from "../utils/card/CardHeader";
 import Card from "../utils/card/Card";
-import EducationOverview from "./EducationOverview";
 import EducationInputForm from "./EducationInputForm";
+import OverviewList from "../OverviewList";
 
+/**
+ * Represents the Education component.
+ *
+ * @param {Function} collapseCard - The function to collapse the card.
+ * @param {Array} education - The education data.
+ * @param {Function} setEducation - The function to update education data.
+ * @param {Object} newEducationData - The new education data.
+ * @param {Function} handleNewEducationChange - The function to handle new education change.
+ * @param {Function} setNewEducationData - The function to update the new education data.
+ * @param {Boolean} educationOverviewActive - The state of the education overview.
+ * @param {Function} setEducationOverviewActive - The function to update the education overview state.
+ * @returns {JSX.Element} The rendered Education component.
+ */
 const Education = ({
   collapseCard,
   education,
@@ -18,7 +31,7 @@ const Education = ({
     setEducation(newEducation);
   };
 
-  const handleOverviewChange = () => {
+  const toggleOverview = () => {
     setEducationOverviewActive(!educationOverviewActive);
   };
 
@@ -29,7 +42,18 @@ const Education = ({
     );
 
     setNewEducationData(educationToEdit); // Set the education data to edit.
-    handleOverviewChange();
+    toggleOverview();
+  };
+
+  /** Formats the data for the OverviewList component. */
+  const formatEducationData = () => {
+    return education.map((singleEducation) => {
+      return {
+        id: singleEducation.id,
+        title: singleEducation.degree,
+        subtitle: singleEducation.school,
+      };
+    });
   };
 
   return (
@@ -41,11 +65,12 @@ const Education = ({
       />
 
       {educationOverviewActive ? (
-        <EducationOverview
-          education={education}
-          deleteEducation={deleteEducation}
-          handleOverviewChange={handleOverviewChange}
-          handleEditButton={handleEditButton}
+        <OverviewList
+          data={formatEducationData()}
+          onDelete={deleteEducation}
+          onEdit={handleEditButton}
+          onNewButtonClick={toggleOverview}
+          buttonText="Add Education"
         />
       ) : (
         <EducationInputForm

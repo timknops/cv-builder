@@ -28,7 +28,7 @@ const sampleData = {
   experience: [
     {
       company: "Google",
-      position: "Software Engineer",
+      title: "Software Engineer",
       startDate: "2019/01",
       endDate: "2020/10",
       location: "Abuja",
@@ -38,7 +38,7 @@ const sampleData = {
     },
     {
       company: "Facebook",
-      position: "Software Engineer",
+      title: "DevOps Engineer",
       startDate: "2020/11",
       endDate: "2021/10",
       location: "Lagos",

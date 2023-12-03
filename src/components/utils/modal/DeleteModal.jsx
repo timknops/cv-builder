@@ -1,3 +1,12 @@
+/**
+ * Modal component for deleting an item.
+ *
+ * @param {String} text - The text to be displayed in the modal.
+ * @param {String} textHighlight - The text to be highlighted in the modal.
+ * @param {Function} handleModal - The function to handle the modal.
+ * @param {Function} continueAction - The function to continue the action.
+ * @returns {JSX.Element} The rendered DeleteModal component.
+ */
 const DeleteModal = ({ text, textHighlight, handleModal, continueAction }) => {
   return (
     <div className="fixed top-0 z-50 right-0 bottom-0 left-0 flex items-center justify-center bg-gray-900/10">
