@@ -11,6 +11,8 @@ import OverviewList from "../OverviewList";
  * @param {Function} setExperience - The function to update experience data.
  * @param {Boolean} experienceOverviewActive - The state of the experience overview.
  * @param {Function} setExperienceOverviewActive - The function to update the experience overview state.
+ * @param {Object} newExperienceData - The new experience data.
+ * @param {Function} setNewExperienceData - The function to update the new experience data.
  * @returns {JSX.Element} The rendered Experience component.
  */
 const Experience = ({
@@ -19,6 +21,8 @@ const Experience = ({
   setExperience,
   experienceOverviewActive,
   setExperienceOverviewActive,
+  newExperienceData,
+  setNewExperienceData,
 }) => {
   /** Formats the data for the OverviewList component. */
   const formatExperienceData = () => {
@@ -29,6 +33,28 @@ const Experience = ({
         subtitle: singleExperience.company,
       };
     });
+  };
+
+  const handleDeleteButton = (id) => {
+    const newExperience = experience.filter(
+      (singleExperience) => singleExperience.id !== id
+    );
+
+    setExperience(newExperience);
+  };
+
+  const handleEditButton = (experienceId) => {
+    // Find the experience object that matches the id of the experience to edit.
+    const experienceToEdit = experience.find(
+      (singleExperience) => singleExperience.id === experienceId
+    );
+
+    setNewExperienceData(experienceToEdit); // Set the experience data to edit.
+    toggleOverview();
+  };
+
+  const toggleOverview = () => {
+    setExperienceOverviewActive(!experienceOverviewActive);
   };
 
   return (
@@ -42,13 +68,19 @@ const Experience = ({
       {experienceOverviewActive ? (
         <OverviewList
           data={formatExperienceData()}
-          onDelete={setExperience}
-          onEdit={setExperience}
-          onNewButtonClick={setExperienceOverviewActive}
+          onDelete={handleDeleteButton}
+          onEdit={handleEditButton}
+          onNewButtonClick={toggleOverview}
           buttonText="Add Experience"
         />
       ) : (
-        <ExperienceInputForm />
+        <ExperienceInputForm
+          experience={experience}
+          setExperience={setExperience}
+          newExperienceData={newExperienceData}
+          setNewExperienceData={setNewExperienceData}
+          toggleOverview={toggleOverview}
+        />
       )}
     </Card>
   );

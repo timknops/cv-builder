@@ -34,6 +34,14 @@ const Sidebar = ({
     endYear: "",
     location: "",
   });
+  const [newExperienceData, setNewExperienceData] = useState({
+    company: "",
+    title: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+    description: "",
+  });
   const [educationOverviewActive, setEducationOverviewActive] = useState(true);
   const [experienceOverviewActive, setExperienceOverviewActive] =
     useState(true);
@@ -43,15 +51,6 @@ const Sidebar = ({
 
     setPersonalDetails((prevPersonalDetails) => ({
       ...prevPersonalDetails,
-      [id]: value,
-    }));
-  };
-
-  const handleNewEducationChange = (e) => {
-    const { id, value } = e.target;
-
-    setNewEducationData((prevNewEducationData) => ({
-      ...prevNewEducationData,
       [id]: value,
     }));
   };
@@ -89,7 +88,6 @@ const Sidebar = ({
           education={education}
           setEducation={setEducation}
           newEducationData={newEducationData}
-          handleNewEducationChange={handleNewEducationChange}
           setNewEducationData={setNewEducationData}
           educationOverviewActive={educationOverviewActive}
           setEducationOverviewActive={setEducationOverviewActive}
@@ -108,6 +106,8 @@ const Sidebar = ({
           setExperience={setExperience}
           experienceOverviewActive={experienceOverviewActive}
           setExperienceOverviewActive={setExperienceOverviewActive}
+          newExperienceData={newExperienceData}
+          setNewExperienceData={setNewExperienceData}
         />
       )}
     </div>

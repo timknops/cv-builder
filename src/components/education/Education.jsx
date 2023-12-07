@@ -10,7 +10,6 @@ import OverviewList from "../OverviewList";
  * @param {Array} education - The education data.
  * @param {Function} setEducation - The function to update education data.
  * @param {Object} newEducationData - The new education data.
- * @param {Function} handleNewEducationChange - The function to handle new education change.
  * @param {Function} setNewEducationData - The function to update the new education data.
  * @param {Boolean} educationOverviewActive - The state of the education overview.
  * @param {Function} setEducationOverviewActive - The function to update the education overview state.
@@ -21,7 +20,6 @@ const Education = ({
   education,
   setEducation,
   newEducationData,
-  handleNewEducationChange,
   setNewEducationData,
   educationOverviewActive,
   setEducationOverviewActive,
@@ -77,7 +75,6 @@ const Education = ({
           education={education}
           newEducationData={newEducationData}
           setNewEducationData={setNewEducationData}
-          handleNewEducationChange={handleNewEducationChange}
           setEducationOverviewActive={setEducationOverviewActive}
           setEducation={setEducation}
         />

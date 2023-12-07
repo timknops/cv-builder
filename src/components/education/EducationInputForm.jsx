@@ -8,7 +8,6 @@ import InputGroup from "../utils/user_input/InputGroup";
  * @component
  * @param {Array} education - Array of education objects.
  * @param {Object} newEducationData - Data for new education.
- * @param {Function} handleNewEducationChange - Function to handle new education data change.
  * @param {Function} setNewEducationData - Function to set new education data.
  * @param {Function} setEducationOverviewActive - Function to set overview active state.
  * @param {Function} setEducation - Function to set education data.
@@ -17,7 +16,6 @@ import InputGroup from "../utils/user_input/InputGroup";
 const EducationInputForm = ({
   education,
   newEducationData,
-  handleNewEducationChange,
   setNewEducationData,
   setEducationOverviewActive,
   setEducation,
@@ -32,7 +30,16 @@ const EducationInputForm = ({
     });
   };
 
-  const handleButtonClick = (e) => {
+  const handleNewEducationChange = (e) => {
+    const { id, value } = e.target;
+
+    setNewEducationData((prevNewEducationData) => ({
+      ...prevNewEducationData,
+      [id]: value,
+    }));
+  };
+
+  const handleClick = (e) => {
     e.preventDefault();
 
     switch (e.target.textContent.toLowerCase()) {
@@ -50,11 +57,12 @@ const EducationInputForm = ({
         ];
 
         setEducation(updatedEducation);
-
         resetNewEducation();
         setEducationOverviewActive(true);
+
         break;
       }
+
       case "add": {
         const newEducationDataWithId = {
           ...newEducationData,
@@ -64,8 +72,10 @@ const EducationInputForm = ({
           ...prevEducation,
           newEducationDataWithId,
         ]);
+
         resetNewEducation();
         setEducationOverviewActive(true);
+
         break;
       }
 
@@ -124,23 +134,11 @@ const EducationInputForm = ({
       />
 
       <div className="flex justify-end items-center gap-2">
-        <Button
-          type="reset"
-          text="Cancel"
-          handleButtonClick={handleButtonClick}
-        />
+        <Button type="reset" text="Cancel" handleClick={handleClick} />
         {newEducationData.id ? (
-          <Button
-            type="submit"
-            text="Save"
-            handleButtonClick={handleButtonClick}
-          />
+          <Button type="submit" text="Save" handleClick={handleClick} />
         ) : (
-          <Button
-            type="submit"
-            text="Add"
-            handleButtonClick={handleButtonClick}
-          />
+          <Button type="submit" text="Add" handleClick={handleClick} />
         )}
       </div>
     </form>
