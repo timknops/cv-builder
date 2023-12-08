@@ -141,7 +141,7 @@ const ExperienceInputForm = ({
         labelId="description"
         labelText="Description"
         type="textarea"
-        placeholder="Enter the job description"
+        placeholder="Enter your bullet points separated by a period.&#10;Example: Bullet point 1. Bullet point 2."
         value={newExperienceData.description}
         onChange={handleNewExperienceChange}
       />

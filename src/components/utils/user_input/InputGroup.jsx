@@ -17,8 +17,6 @@ const InputGroup = ({
   value,
   onChange,
 }) => {
-  console.log(type);
-
   return (
     <div className="flex flex-col">
       <label
@@ -28,6 +26,8 @@ const InputGroup = ({
         {labelText.toUpperCase()}
       </label>
 
+      {/** If the type is text, email or tel, render an input element,
+       * else render a textarea element */}
       {type === "text" || type === "email" || type === "tel" ? (
         <input
           className="border border-gray-300 focus:border-red-900 rounded-md px-4 py-2 text-sm outline-none transition-all duration-200 ease-in-out focus:ring-1 focus:ring-red-900"

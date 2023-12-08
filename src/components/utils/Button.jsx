@@ -1,3 +1,12 @@
+/**
+ * Button component.
+ *
+ * @component
+ * @param {String} type - The type of button.
+ * @param {String} text - The text to be displayed on the button.
+ * @param {Function} handleClick - The function to handle the button click.
+ * @returns {JSX.Element} The rendered Button component.
+ */
 const Button = ({ type, text, handleClick }) => {
   return (
     <>
