@@ -39,8 +39,12 @@ const Resume = ({ personalDetails, education, experience }) => {
   return (
     <div className="bg-white shadow rounded-lg h-full aspect-[1/1.3] flex flex-col items-center">
       <ResumeHeader personalDetails={personalDetails} />
-      <ResumeSection data={formatEducation()} sectionTitle="Education" />
-      <ResumeSection data={formatExperience()} sectionTitle="Experience" />
+      {education.length > 0 && (
+        <ResumeSection data={formatEducation()} sectionTitle="Education" />
+      )}
+      {experience.length > 0 && (
+        <ResumeSection data={formatExperience()} sectionTitle="Experience" />
+      )}
     </div>
   );
 };

@@ -6,9 +6,6 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
-      width: {
-        450: "450px",
-      },
     },
   },
   plugins: [],

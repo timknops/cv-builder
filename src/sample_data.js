@@ -42,7 +42,8 @@ const sampleData = {
       startDate: "2020/11",
       endDate: "2021/10",
       location: "Lagos",
-      description: "lorem ipsum",
+      description:
+        "Managed and maintained cloud infrastructure. Implemented CI/CD pipelines for software deployment. Worked with cross-functional teams to deliver high-quality software solutions.",
       id: uuidv4(),
     },
   ],

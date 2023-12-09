@@ -3,6 +3,8 @@ import Education from "./education/Education.jsx";
 import { useState } from "react";
 import CollapsedInputCard from "./utils/card/CollapsedInputCard.jsx";
 import Experience from "./experience/Experience.jsx";
+import SampleDataButtons from "./utils/SampleDataButtons.jsx";
+import sampleData from "../sample_data.js";
 
 /**
  * Sidebar component for displaying personal details and education information.
@@ -62,8 +64,33 @@ const Sidebar = ({
     }));
   };
 
+  const resetAllData = () => {
+    setPersonalDetails({
+      fullName: "",
+      title: "",
+      email: "",
+      phoneNumber: "",
+      address: "",
+      city: "",
+      state: "",
+      zip: "",
+    });
+    setEducation([]);
+    setExperience([]);
+  };
+
+  const loadSampleData = () => {
+    setPersonalDetails(sampleData.personalDetails);
+    setEducation(sampleData.education);
+    setExperience(sampleData.experience);
+  };
+
   return (
-    <div className="flex flex-col justify-self-end w-450 py-6 gap-6">
+    <div className="flex flex-col justify-self-end py-6 gap-6 w-[500px]">
+      <SampleDataButtons
+        resetAllData={resetAllData}
+        loadSampleData={loadSampleData}
+      />
       {collapsed.personalDetails ? (
         <CollapsedInputCard
           title="Personal Details"

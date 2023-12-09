@@ -71,6 +71,7 @@ const ExperienceInputForm = ({
       }
 
       case "add": {
+        // Add the new experience object to the experience array.
         const newExperienceDataWithId = {
           ...newExperienceData,
           id: uuidv4(),
@@ -118,6 +119,7 @@ const ExperienceInputForm = ({
         value={newExperienceData.location}
         onChange={handleNewExperienceChange}
       />
+
       <div className="grid grid-cols-2 gap-4">
         <InputGroup
           labelId="startDate"
