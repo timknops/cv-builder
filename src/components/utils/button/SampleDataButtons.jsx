@@ -1,4 +1,4 @@
-import Card from "./card/Card.jsx";
+import Card from "../card/Card.jsx";
 import Button from "./Button.jsx";
 
 /**
@@ -11,11 +11,20 @@ import Button from "./Button.jsx";
  */
 const SampleDataButtons = ({ resetAllData, loadSampleData }) => {
   return (
-    <div>
-      <Card type="small">
-        <Button text="Load Sample Data" handleClick={loadSampleData} />
-        <Button text="Clear Data" type="reset" handleClick={resetAllData} />
-      </Card>
+    <div className="p-4 grid grid-cols-2 gap-6">
+      {/* <Card type="small"> */}
+      <Button
+        text="Load Sample Data"
+        handleClick={loadSampleData}
+        icon="fa-solid fa-upload"
+      />
+      <Button
+        text="Clear Data"
+        type="reset"
+        handleClick={resetAllData}
+        icon="fa-solid fa-broom"
+      />
+      {/* </Card> */}
     </div>
   );
 };

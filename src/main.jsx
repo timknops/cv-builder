@@ -9,12 +9,24 @@ import {
   faEnvelope,
   faPhone,
   faMapMarkerAlt,
+  faDownload,
+  faUpload,
+  faBroom,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faChevronDown, faChevronUp, faEnvelope, faPhone, faMapMarkerAlt);
+library.add(
+  faChevronDown,
+  faChevronUp,
+  faEnvelope,
+  faPhone,
+  faMapMarkerAlt,
+  faDownload,
+  faUpload,
+  faBroom
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

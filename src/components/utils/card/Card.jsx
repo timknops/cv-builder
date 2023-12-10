@@ -9,7 +9,7 @@ const Card = ({ children, type }) => {
   return (
     <>
       {type === "small" ? (
-        <div className="bg-white rounded-lg p-4 h-fit shadow w-full grid grid-cols-2 gap-5">
+        <div className="bg-white rounded-lg p-4 h-fit shadow w-full grid grid-cols-3 gap-5">
           {children}
         </div>
       ) : (
@@ -22,6 +22,3 @@ const Card = ({ children, type }) => {
 };
 
 export default Card;
-// <div className="bg-white rounded-lg p-7 h-fit shadow w-full">
-//   {children}
-// </div>

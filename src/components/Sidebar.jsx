@@ -3,7 +3,7 @@ import Education from "./education/Education.jsx";
 import { useState } from "react";
 import CollapsedInputCard from "./utils/card/CollapsedInputCard.jsx";
 import Experience from "./experience/Experience.jsx";
-import SampleDataButtons from "./utils/SampleDataButtons.jsx";
+import SampleDataButtons from "./utils/button/SampleDataButtons.jsx";
 import sampleData from "../sample_data.js";
 
 /**
@@ -64,33 +64,8 @@ const Sidebar = ({
     }));
   };
 
-  const resetAllData = () => {
-    setPersonalDetails({
-      fullName: "",
-      title: "",
-      email: "",
-      phoneNumber: "",
-      address: "",
-      city: "",
-      state: "",
-      zip: "",
-    });
-    setEducation([]);
-    setExperience([]);
-  };
-
-  const loadSampleData = () => {
-    setPersonalDetails(sampleData.personalDetails);
-    setEducation(sampleData.education);
-    setExperience(sampleData.experience);
-  };
-
   return (
-    <div className="flex flex-col justify-self-end py-6 gap-6 w-[500px]">
-      <SampleDataButtons
-        resetAllData={resetAllData}
-        loadSampleData={loadSampleData}
-      />
+    <div className="flex flex-col justify-self-end py-6 gap-6 ps-6 w-full 2xl:w-[500px] col-span-4 2xl:col-span-1">
       {collapsed.personalDetails ? (
         <CollapsedInputCard
           title="Personal Details"

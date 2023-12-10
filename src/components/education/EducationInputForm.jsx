@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import Button from "../utils/Button";
+import Button from "../utils/button/Button";
 import InputGroup from "../utils/user_input/InputGroup";
 
 /**
