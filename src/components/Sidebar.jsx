@@ -65,7 +65,7 @@ const Sidebar = ({
   };
 
   return (
-    <div className="flex flex-col justify-self-end py-6 gap-6 ps-6 w-full 2xl:w-[500px] col-span-4 2xl:col-span-1">
+    <div className="flex flex-col w-full justify-self-end col-span-4 gap-6 lg:py-6 lg:ps-6 2xl:w-[500px] 2xl:col-span-1">
       {collapsed.personalDetails ? (
         <CollapsedInputCard
           title="Personal Details"

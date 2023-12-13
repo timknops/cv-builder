@@ -11,7 +11,7 @@ import Button from "./Button.jsx";
  */
 const SampleDataButtons = ({ resetAllData, loadSampleData }) => {
   return (
-    <div className="p-4 grid grid-cols-2 gap-6">
+    <div className="p-4 flex sm:grid sm:grid-cols-2 gap-6">
       {/* <Card type="small"> */}
       <Button
         text="Load Sample Data"
