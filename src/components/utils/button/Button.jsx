@@ -14,6 +14,8 @@ import { useEffect, useState } from "react";
 const Button = ({ type, text, handleClick, icon }) => {
   const [isMobile, setIsMobile] = useState(false);
 
+  // Check if the window width is >= 768px (sm breakpoint), and set the isMobile state accordingly.
+  // This is used to determine whether or not to display the icon on the button.
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth >= 768);

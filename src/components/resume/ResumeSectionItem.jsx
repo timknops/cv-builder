@@ -15,7 +15,7 @@ const ResumeSectionItem = ({ item }) => {
     }
 
     return descriptionArray.map((description) => (
-      <li className="list-disc list-outside" key={description}>
+      <li className="list-disc list-outside" key={`${item.id}-${description}`}>
         {description.trim()}
       </li>
     ));

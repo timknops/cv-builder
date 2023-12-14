@@ -1,4 +1,3 @@
-import Card from "../card/Card.jsx";
 import Button from "./Button.jsx";
 
 /**

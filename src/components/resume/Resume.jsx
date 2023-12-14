@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import ResumeHeader from "./ResumeHeader.jsx";
 import ResumeSection from "./ResumeSection.jsx";
 
@@ -6,13 +7,15 @@ import ResumeSection from "./ResumeSection.jsx";
  * @param {Object} personalDetails - The personal details of the resume owner.
  * @param {Array} education - The education details of the resume owner.
  * @param {Array} experience - The experience details of the resume owner.
+ * @param {Object} resumeRef - The reference to the resume component.
  * @returns {JSX.Element} The rendered resume component.
  */
-const Resume = ({ personalDetails, education, experience }) => {
+const Resume = ({ personalDetails, education, experience, resumeRef }) => {
   // Format the education data to match the format of data expected by the ResumeSection component.
   const formatEducation = () => {
     return education.map((item) => {
       return {
+        id: uuidv4(),
         title: item.school,
         subTitle: item.degree,
         startYear: item.startYear,
@@ -26,6 +29,7 @@ const Resume = ({ personalDetails, education, experience }) => {
   const formatExperience = () => {
     return experience.map((item) => {
       return {
+        id: uuidv4(),
         title: item.title,
         subTitle: item.company,
         startYear: item.startDate,
@@ -37,7 +41,10 @@ const Resume = ({ personalDetails, education, experience }) => {
   };
 
   return (
-    <div className="bg-white shadow rounded-lg h-full w-full flex flex-col items-center">
+    <div
+      ref={resumeRef}
+      className="bg-white shadow rounded-lg h-full w-full flex flex-col items-center"
+    >
       <ResumeHeader personalDetails={personalDetails} />
       {education.length > 0 && (
         <ResumeSection data={formatEducation()} sectionTitle="Education" />

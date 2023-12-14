@@ -9,9 +9,9 @@ import ResumeSectionItem from "./ResumeSectionItem.jsx";
  */
 const ResumeSection = ({ sectionTitle, data }) => {
   return (
-    <div className="w-full p-5 pb-0">
+    <div className="w-full p-5 pb-0 sm:pb-3">
       <h3 className="text-red-900 text-xl font-extrabold">{sectionTitle}</h3>
-      <hr className="h-1 my-1 bg-gray-200 border-0 rounded " />
+      <hr className="h-1 my-1 bg-gray-200 border-0 rounded" />
 
       <div className="flex flex-col gap-2">
         {data.map((item) => (

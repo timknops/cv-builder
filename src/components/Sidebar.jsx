@@ -3,8 +3,6 @@ import Education from "./education/Education.jsx";
 import { useState } from "react";
 import CollapsedInputCard from "./utils/card/CollapsedInputCard.jsx";
 import Experience from "./experience/Experience.jsx";
-import SampleDataButtons from "./utils/button/SampleDataButtons.jsx";
-import sampleData from "../sample_data.js";
 
 /**
  * Sidebar component for displaying personal details and education information.
@@ -14,6 +12,8 @@ import sampleData from "../sample_data.js";
  * @param {Function} setPersonalDetails - The function to update personal details.
  * @param {Array} education - The education data.
  * @param {Function} setEducation - The function to update education data.
+ * @param {Array} experience - The experience data.
+ * @param {Function} setExperience - The function to update experience data.
  * @returns {JSX.Element} The rendered Sidebar component.
  */
 const Sidebar = ({
