@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import html2pdf from "html2pdf.js";
 import Resume from "./components/resume/Resume.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import sampleData from "./sample_data.js";
