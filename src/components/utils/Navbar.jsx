@@ -7,32 +7,24 @@ import SampleDataButtons from "./button/SampleDataButtons";
  * @component
  * @param {Function} resetAllData - The function to reset all data.
  * @param {Function} loadSampleData - The function to load sample data.
- * @param {Function} downloadResume - The function to download the resume.
  * @returns {JSX.Element} The rendered Navbar component.
  */
-const Navbar = ({ resetAllData, loadSampleData, downloadResume }) => {
+const Navbar = ({ resetAllData, loadSampleData }) => {
   return (
-    <nav className="sticky top-0 bg-white shadow-md flex items-center justify-center md:justify-between px-8 py-02">
-      <h1 className="hidden md:block w-3/12 text-red-900 font-extrabold text-2xl">
-        CV-Builder
-      </h1>
+    <nav className="sticky top-0 bg-white shadow-md flex items-center justify-center px-6 2xl:px-8">
+      <div className=" grid grid-cols-10 2xl:grid-cols-2 items-center w-full">
+        <div className="hidden md:flex items-center h-full col-span-4 2xl:col-span-1">
+          <h1 className="hidden md:block text-red-900 font-extrabold text-2xl">
+            CV-Builder
+          </h1>
+        </div>
 
-      <div className="font-semibold text-lg">
-        <ul className="flex items-center">
+        <ul className="flex items-center justify-center col-span-10 md:justify-end md:col-span-6 2xl:col-span-1">
           <SampleDataButtons
             resetAllData={resetAllData}
             loadSampleData={loadSampleData}
           />
         </ul>
-      </div>
-
-      <div className="w-3/12 flex ms-2 md:ms-0 md:justify-end">
-        <Button
-          handleClick={downloadResume}
-          type="submit"
-          text="Download"
-          icon="fa-solid fa-download"
-        />
       </div>
     </nav>
   );

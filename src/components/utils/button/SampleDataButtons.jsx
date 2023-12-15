@@ -10,20 +10,18 @@ import Button from "./Button.jsx";
  */
 const SampleDataButtons = ({ resetAllData, loadSampleData }) => {
   return (
-    <div className="p-4 flex sm:grid sm:grid-cols-2 gap-6">
-      {/* <Card type="small"> */}
-      <Button
-        text="Load Sample Data"
-        handleClick={loadSampleData}
-        icon="fa-solid fa-upload"
-      />
+    <div className="p-4 flex sm:grid sm:grid-cols-2 gap-6 md:pe-0">
       <Button
         text="Clear Data"
         type="reset"
         handleClick={resetAllData}
         icon="fa-solid fa-broom"
       />
-      {/* </Card> */}
+      <Button
+        text="Load Sample Data"
+        handleClick={loadSampleData}
+        icon="fa-solid fa-upload"
+      />
     </div>
   );
 };

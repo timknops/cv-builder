@@ -36,36 +36,9 @@ const App = () => {
     setExperience(sampleData.experience);
   };
 
-  const downloadResume = () => {
-    const content = resumeRef.current;
-
-    const contentCopy = content.cloneNode(true);
-
-    // Remove the 'rounded-lg' class from the resume.
-    contentCopy.classList.remove("rounded-lg");
-
-    // Remove the 'rounded-t-lg' class from the resume header.
-    contentCopy.firstChild.classList.remove("rounded-t-lg");
-
-    // Create a high quality PDF.
-    const opt = {
-      margin: 0,
-      filename: "resume.pdf",
-      image: { type: "jpeg", quality: 1 },
-      html2canvas: { scale: 4 },
-      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-    };
-
-    html2pdf().set(opt).from(contentCopy).save();
-  };
-
   return (
     <>
-      <Navbar
-        resetAllData={resetAllData}
-        loadSampleData={loadSampleData}
-        downloadResume={downloadResume}
-      />
+      <Navbar resetAllData={resetAllData} loadSampleData={loadSampleData} />
 
       <div className="w-full gap-6 p-6 lg:grid lg:p-0 lg:grid-cols-10 2xl:grid-cols-2">
         {/* Left side of the page. */}
