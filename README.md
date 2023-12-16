@@ -1,8 +1,19 @@
-# React + Vite
+# CV-Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple, but fully responsive web-app that allows the user to create a resume. This main purpose of the project was to get a basic foundation of React.
 
-Currently, two official plugins are available:
+[![Desktop project screenshot][cv-builder-screenshot-full]](https://example.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+
+
+
+
+
+
+
+
+
+[cv-builder-screenshot-full]: src/assets/cv-builder-screenshot-full.png
