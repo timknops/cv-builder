@@ -4,7 +4,7 @@
 
 This project was my first experience with React, and its main goal was to help me grasp the basics of React.
 
-[Live Demo](www.exmample.com)
+[Live Demo](https://timknops.github.io/cv-builder/)
 
 ![Desktop project screenshot][cv-builder-screenshot-full]
 
@@ -19,7 +19,7 @@ This project was my first experience with React, and its main goal was to help m
 
 
 ## Installation
-You can check out the live demo [here](www.exmample.com). If you wish to get a local copy running then follow the steps below:
+You can check out the live demo [here](https://timknops.github.io/cv-builder/). If you wish to get a local copy running then follow the steps below:
 
 ### 1. Clone the Repository
 
