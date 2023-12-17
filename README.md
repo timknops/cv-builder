@@ -28,7 +28,7 @@ git clone https://github.com/timknops/cv-builder.git
 ```
 
 ### 2. Dependencies
-Navigate to the project's root directory and run
+Navigate to the project's root directory and run:
 
 ```bash
 npm install
