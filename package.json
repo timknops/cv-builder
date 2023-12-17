@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://timknops.github.io/cv-builder/",
+  "homepage": "https://timknops.github.io/cv-builder",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
